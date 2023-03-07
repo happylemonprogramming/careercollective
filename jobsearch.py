@@ -37,7 +37,7 @@ def jobSearch(keyword, location, length, page):
         lat2, lon2 = location2.latitude, location2.longitude
         distance_in_miles = distance((lat1, lon1), (lat2, lon2)).miles
 
-        if distance_in_miles <= length:
+        if distance_in_miles <= float(length):
             # What to load on the job posting
             # Title
             # Company
