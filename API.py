@@ -26,7 +26,7 @@ def index():
   page = json_data['page']
   # Job Search API
   job_search_output = jobSearch(keyword, location, length, page)
-  dictionary = {"1": job_search_output[0], '2': job_search_output[1]}
+  dictionary = {"title": job_search_output[0], 'location': job_search_output[1], 'salary': job_search_output[2], 'total pages': job_search_output[3]}
   api_response = json.dumps(dictionary)
   return api_response
 

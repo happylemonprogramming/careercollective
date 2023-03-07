@@ -83,8 +83,7 @@ def jobSearch(keyword, location, length, page):
     # else:
     #     print("The given postal code is NOT within 50 miles of the other postal code.")
 
-test = jobSearch("Architect", "Raleigh", 100, 11)
-print(test)
+
 # MAYBE TRY PREEMPTIVELY GETTING ALL LOCATIONS
 # IF WE KNOW ALL LOCATIONS AS A LIST, WE CAN CHECK IF THE LOCATION IS IN THE LIST FIRST
 # THEN WE CAN CHECK IF THE LOCATION IS WITHIN X MILES OF THE USER'S LOCATION
