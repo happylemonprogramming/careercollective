@@ -65,7 +65,7 @@ def jobSearch(keyword, user_location, radius, page):
     for item in idx.intersection((user_coords[1]-1, user_coords[0]-1, user_coords[1]+1, user_coords[0]+1), objects=True):
         i = item.id
         zip_code, (lat, lon) = zip_codes[i]
-        if great_circle(user_coords, (lat, lon)).miles <= radius:
+        if great_circle(user_coords, (lat, lon)).miles <= int(radius):
             nearby_zip_codes.append(zip_code)
 
     # join values with OR operator and enclose in parentheses
