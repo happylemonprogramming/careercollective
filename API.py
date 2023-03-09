@@ -14,19 +14,19 @@ app.config["SECRET_KEY"] = os.environ.get('flasksecret')
 
 # Route for Twitter Token Generator
 @app.route('/', methods=["POST"])
-def index():
+def landing():
   #Example JSON
-    # JSON Body = {"keyword": "Architect", "location": "Raleigh", "length": "100", "page": "1"}
+    # JSON Body = {"keyword": "Architect", "location": "Raleigh", "radius": "100", "page": "1"}
 
   # Variable loading for JSON
   json_data = request.get_json()
   keyword = json_data['keyword']
   location = json_data['location']
-  length = json_data['length']
+  radius = json_data['radius']
   page = json_data['page']
   # Job Search API
-  job_search_output = jobSearch(keyword, location, length, page)
-  dictionary = {"title": job_search_output[0], 'location': job_search_output[1], 'salary': job_search_output[2], 'total pages': job_search_output[3]}
+  job_search_output = jobSearch(keyword, location, radius, page)
+  dictionary = {"title": job_search_output[0], 'location': job_search_output[1], 'salary': job_search_output[2], 'total pages': job_search_output[3], 'total jobs': job_search_output[4]}
   api_response = json.dumps(dictionary)
   return api_response
 
